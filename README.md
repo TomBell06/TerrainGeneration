@@ -1,4 +1,5 @@
 #Terrain Generation
+
 This is a simple library for creating heightmaps for random terrain.
 
 ## How to
