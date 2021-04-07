@@ -224,6 +224,28 @@ namespace TerrainGeneration
         public void generateHeightMap(String fileName)
         {
 
+            Bitmap heightMap = buildHeightMap();
+
+        }
+
+
+        public double[,] getHeightData()
+        {
+
+            return this.heights;
+
+        }
+
+        public Bitmap getHeightmap()
+        {
+
+            return buildHeightMap();
+
+        }
+
+        private Bitmap buildHeightMap()
+        {
+
             Bitmap bitmap = new Bitmap(width, height);
 
             for (int x = 0; x < width; x++)
@@ -239,12 +261,12 @@ namespace TerrainGeneration
                     int colourValue = (int)(normalisedValue * 255);
 
                     Color color = Color.FromArgb(colourValue, colourValue, colourValue);
-                    bitmap.SetPixel(x,y, color);
+                    bitmap.SetPixel(x, y, color);
                 }
 
             }
 
-            bitmap.Save("output/" + fileName + ".png");
+            return bitmap;
 
         }
 
